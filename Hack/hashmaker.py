@@ -1,12 +1,14 @@
+from hashlib import sha256
 def make_hash():
-    with open("/tmp/sha256.txt", "w") as file:
+    with open("./sha256.txt", "w", encoding="utf-8") as file:
         for i in range(0, 10000):
-            file.write(f"{i} = {str(hash(str(i).zfill(4)))}\n")
+            file.write(f"{str(i).zfill(4)} = {sha256((str(i).zfill(4).encode())).hexdigest()}\n")
+        
 
 
 def hashtodict():
-    with open("/tmp/sha256.txt") as file:
+    with open("./sha256.txt") as file:
         passes = dict()
-        for i in range(0, 19):
-            passes[file.readline()[4:].strip()] = i
-        print( passes)
+        for i in range(0, 10000):
+            passes[file.readline()[6:].strip()] = str(i).zfill(4)
+        return(passes)
