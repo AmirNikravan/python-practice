@@ -5,6 +5,9 @@ from os import system
 def encode(str, shift):
     new_str = ""
     for word in str:
+        if word == " ":
+            new_str += " "
+            continue
         possition = shift
         possition += alphabet.index(word)
         if (possition) >= 26:
@@ -19,6 +22,9 @@ def encode(str, shift):
 def decode(str, shift):
     new_str = ""
     for word in str:
+        if word == " ":
+            new_str += " "
+            continue
         possition = shift
         possition = alphabet.index(word) - shift
         if possition < 0:
