@@ -7,7 +7,7 @@ def cal(lines):
     return int(360 / lines)
 
 def draw():
-    for number_of_lines in range(3,10):
+    for number_of_lines in range(3,19):
         new = turtle.Turtle()
         new.color(color())
         count = cal(number_of_lines)
