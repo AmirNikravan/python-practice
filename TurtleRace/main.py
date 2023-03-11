@@ -26,6 +26,7 @@ t5.penup()
 t5.goto(x=-500, y=0)
 t5.color("orange")
 
+
 t6 = turtle.Turtle(shape="turtle")
 t6.penup()
 t6.goto(x=-500, y=-100)
