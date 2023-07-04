@@ -42,4 +42,4 @@ class Snake:
         newsegment.goto(possition)
         self.segments.append(newsegment)
     def extend(self):
-        self.add_segment(self.head.position())
+        self.add_segment(self.segments[-1].position())
